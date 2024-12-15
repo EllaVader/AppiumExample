@@ -1,0 +1,4 @@
+{
+    "maven.showInExplorerContextMenu": false,
+    "dotnet-test-explorer.testProjectPath": "AppiumExample/Tests"
+}
