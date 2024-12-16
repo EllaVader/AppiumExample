@@ -1,4 +1,5 @@
 using System;
+using AppiumExample.Config;
 using AppiumExample.Pages;
 using AppiumExample.Pages.Components;
 using NUnit.Framework;
@@ -9,8 +10,7 @@ namespace AppiumExample;
 
 /**
     TODO: 
-    1. Create and Commit to git repo
-    2. wait for element gone is taking too long - not honoring the wait
+    2. wait for element gone is taking too long - not honoring the wait- it's better but revisith
     3. Add IOS test
     4. loading of capabilities based on device
         - pass in parameter
@@ -25,10 +25,19 @@ public class Tests
     [OneTimeSetUp]
     public void SetUp()
     {
+
+        // 1. first get  reading in from appsettings.json working
+        AppiumOptions options = AppInitializer.InitializeSettings();
+        // 2.  then read in from parameter
+        // 3. Then pass in parameter test initilize by device type (iOS, Android)
+
         // this will be abstracted out
         var serverUri = new Uri("http://127.0.0.1:4723");
 
+
+
         // this will be abstracted out for capabilites by device
+        /*
         var options = new AppiumOptions()
         {
             DeviceName = "emulator-5554",
@@ -37,6 +46,7 @@ public class Tests
             PlatformVersion = "14",
             App = "/Users/janine/code/AppiumExample/payloads/apks/ApiDemos-debug-appium.apk",
         };
+        */
 
         // TODO: learn about options / capibilities and what is needed
         // # https://medium.com/@wahyunitas/android-automation-testing-with-appium-adb8d9f6193f
